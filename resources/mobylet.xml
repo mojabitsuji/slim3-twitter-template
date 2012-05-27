@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mobylet>
+    <initializers>
+        <chain>org.mobylet.core.initializer.impl.MobyletInitializerImpl</chain>
+        <chain>org.mobylet.gae.initializer.GaeMobyletInitializer</chain>
+    </initializers>
+    <device>
+        <basedir>device/</basedir>
+    </device>
+    <!-- 
+    <emoji>
+        <basedir>emoji/</basedir>
+    </emoji>
+     -->
+</mobylet>

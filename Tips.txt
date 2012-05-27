@@ -1,0 +1,38 @@
+・mobyletのjarを最新のものにすると、includeタグで４つ以上繰り返し表示されてしまうので、
+　mobylet.ver.1.0.4を使用
+
+・hot reloadingに関するエラーが出るため、enumはcoolパッケージ配下におく
+　coolパッケージは、web.xmlに<context-param>で設定する
+　modelもhot reloadingの対象外なので、modelパッケージを指定してその下にenum用のパッケージを作る
+
+　※
+　テストシミュレーション用に作ったdtoをmodelのコンストラクタの引数にしていたらhot reloadingエラーが出た
+　そのため、シミュレーション用のUtilを作りそこで中身の詰め替えを行うようにした
+　詳しいエラーの原因については時間のあるときに調べて、ちゃんと仕組みを理解すること
+
+・cronの実行制限
+　web.xmlの<security-constraint>タグで制限をかけて外部から実行できないようにする
+　1回のリクエストで実行できない場合を考えて実装すること
+　(30制限ではDeadlineExceededException発生の300～400ms秒後にHardDeadlineExceededErrorが発生してスレッドが終了する模様)
+　頻繁にDeadlineExceededExceptionが発生しそうな処理は、TaskQueueにすること
+
+・gae環境でデプロイに失敗してロールバックしなければならなくなった時
+　コマンドプロンプトを立ち上げて、eclipseプラグインのフォルダに移動
+　cd C:\dev\eclipse3.5\plugins\com.google.appengine.eclipse.sdkbundle_1.4.3.v201103311225\appengine-java-sdk-1.4.3\bin
+　以下のコマンドを実行
+　appcfg.cmd rollback C:\dev\workspace3.5\restfultest\war
+　(デプロイに失敗したプロジェクトのwarディレクトリを指定)
+
+・トランザクションについて
+　全てのサービスクラスのメソッドは、トランザクションを引数に取るものと、
+　トランザクションが引数にないものを２つ用意した方がいい
+
+・サーバーごとの設定を分ける方法
+　ローカル環境実行時の引数として、実行時引数に
+　-Dserver.specific.propertie.suffix=local 
+　というような値を設定し、プロパティファイルのサフィックスをこの値を使用したファイル名にして
+　読み込みファイルを変えるようにする
+
+・デプロイに関して
+　web.xmlに日本語が含まれていると失敗する
+　（コメントでも駄目）

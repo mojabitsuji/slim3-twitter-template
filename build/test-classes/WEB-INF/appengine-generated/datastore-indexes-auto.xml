@@ -1,0 +1,22 @@
+<!-- Indices written at Sun, 24 Apr 2011 16:49:05 JST -->
+
+<datastore-indexes>
+
+    <!-- Used 12 times in query history -->
+    <datastore-index kind="History" ancestor="false" source="auto">
+        <property name="deleted" direction="asc"/>
+        <property name="personId" direction="asc"/>
+        <property name="serviceTypeId" direction="asc"/>
+        <property name="timestamp" direction="asc"/>
+        <property name="seqNo" direction="asc"/>
+    </datastore-index>
+
+    <!-- Used 11 times in query history -->
+    <datastore-index kind="ItemHistory" ancestor="false" source="auto">
+        <property name="deleted" direction="asc"/>
+        <property name="personId" direction="asc"/>
+        <property name="serviceTypeId" direction="asc"/>
+        <property name="clearDate" direction="desc"/>
+    </datastore-index>
+
+</datastore-indexes>
