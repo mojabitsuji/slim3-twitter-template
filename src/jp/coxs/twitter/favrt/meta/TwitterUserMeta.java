@@ -1,6 +1,6 @@
 package jp.coxs.twitter.favrt.meta;
 
-//@javax.annotation.Generated(value = { "slim3-gen", "@VERSION@" }, date = "2012-05-27 11:43:56")
+//@javax.annotation.Generated(value = { "slim3-gen", "@VERSION@" }, date = "2012-06-02 01:00:46")
 /** */
 public final class TwitterUserMeta extends org.slim3.datastore.ModelMeta<jp.coxs.twitter.favrt.model.TwitterUser> {
 
@@ -148,10 +148,8 @@ public final class TwitterUserMeta extends org.slim3.datastore.ModelMeta<jp.coxs
         org.slim3.datastore.json.Default encoder0 = new org.slim3.datastore.json.Default();
         writer.setNextPropertyName("apiLimit");
         encoder0.encode(writer, m.isApiLimit());
-        if(m.getDefaultProfile() != null){
-            writer.setNextPropertyName("defaultProfile");
-            encoder0.encode(writer, m.getDefaultProfile());
-        }
+        writer.setNextPropertyName("defaultProfile");
+        encoder0.encode(writer, m.getDefaultProfile());
         if(m.getFollowIds() != null){
             writer.setNextPropertyName("followIds");
             writer.beginArray();

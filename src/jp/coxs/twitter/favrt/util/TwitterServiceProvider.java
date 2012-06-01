@@ -25,11 +25,11 @@ import com.google.gson.reflect.TypeToken;
  */
 public class TwitterServiceProvider extends ServiceProvider {
     public String getConsumerKey() {
-        return "xxxxxxxxxxxxxxxxxxxxxx";
+        return "Wj3o8lWqnFeXM6Mj9wBaOQ";
     }
 
     public String getConsumerSecret() {
-        return "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+        return "A5xyiaJyrQGM7QIL9ZCwcAcfeDvmuw7Flouwp0zldA";
     }
 
     public String getRequestTokenUrl() {

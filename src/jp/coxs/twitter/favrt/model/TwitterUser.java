@@ -23,7 +23,7 @@ public class TwitterUser extends BaseUser implements Serializable {
     @Attribute(persistent = false)
     private String screenName;
     @Attribute(persistent = false)
-    private String defaultProfile;
+    private boolean defaultProfile;
     @Attribute(persistent = false)
     private String profileImageUrl;
     private String followsNextCursor;
@@ -54,7 +54,7 @@ public class TwitterUser extends BaseUser implements Serializable {
      * 
      * @return デフォルトのプロフィール
      */
-    public String getDefaultProfile() {
+    public boolean getDefaultProfile() {
         return defaultProfile;
     }
 
@@ -63,7 +63,7 @@ public class TwitterUser extends BaseUser implements Serializable {
      * 
      * @param defaultProfile デフォルトのプロフィール
      */
-    public void setDefaultProfile(String defaultProfile) {
+    public void setDefaultProfile(boolean defaultProfile) {
         this.defaultProfile = defaultProfile;
     }
 

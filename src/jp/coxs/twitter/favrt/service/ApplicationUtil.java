@@ -68,12 +68,12 @@ public class ApplicationUtil {
     }
 
     public static TwitterUser convertFromJsonModel(User fromUser) {
-        TwitterUser toTwihoUser = new TwitterUser();
-        toTwihoUser.setId(fromUser.getIdStr());
-        toTwihoUser.setScreenName(fromUser.getScreenName());
-        toTwihoUser.setDefaultProfile(fromUser.getDefaultProfile());
-        toTwihoUser.setProfileImageUrl(fromUser.getProfileImageUrl());
-        return toTwihoUser;
+        TwitterUser twitterUser = new TwitterUser();
+        twitterUser.setId(fromUser.getIdStr());
+        twitterUser.setScreenName(fromUser.getScreenName());
+        twitterUser.setDefaultProfile(fromUser.isDefaultProfile());
+        twitterUser.setProfileImageUrl(fromUser.getProfileImageUrl());
+        return twitterUser;
     }
 
     private static void loadProperties() {
