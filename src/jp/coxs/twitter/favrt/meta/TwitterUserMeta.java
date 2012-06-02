@@ -1,6 +1,6 @@
 package jp.coxs.twitter.favrt.meta;
 
-//@javax.annotation.Generated(value = { "slim3-gen", "@VERSION@" }, date = "2012-06-02 01:00:46")
+//@javax.annotation.Generated(value = { "slim3-gen", "@VERSION@" }, date = "2012-06-02 22:05:54")
 /** */
 public final class TwitterUserMeta extends org.slim3.datastore.ModelMeta<jp.coxs.twitter.favrt.model.TwitterUser> {
 
