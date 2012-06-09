@@ -7,7 +7,7 @@ prefix="f" uri="http://www.slim3.org/functions"%>
 <m:xmlheader/>
 <html xml:lang="ja" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>TwiHo!</title>
+<title>TwiHooo!</title>
 </head>
 <body>
 <br />

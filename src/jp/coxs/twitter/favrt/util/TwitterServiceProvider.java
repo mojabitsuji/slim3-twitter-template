@@ -25,11 +25,11 @@ import com.google.gson.reflect.TypeToken;
  */
 public class TwitterServiceProvider extends ServiceProvider {
     public String getConsumerKey() {
-        return "Wj3o8lWqnFeXM6Mj9wBaOQ";
+        return "xxxxxxxxxxxxxxxxxxxxxxxxxx";
     }
 
     public String getConsumerSecret() {
-        return "A5xyiaJyrQGM7QIL9ZCwcAcfeDvmuw7Flouwp0zldA";
+        return "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
     }
 
     public String getRequestTokenUrl() {
@@ -49,7 +49,7 @@ public class TwitterServiceProvider extends ServiceProvider {
     }
 
     public String getCallBackUrl() {
-        return "http://test-twiho.appspot.com/auth";
+        return "http://xxxxxxxx.appspot.com/auth";
     }
 
     @Override
@@ -73,8 +73,8 @@ public class TwitterServiceProvider extends ServiceProvider {
     /*
      * json形式の文字列を解析して、Userのリストを返すメソッドを持ったプロセッサです。
      */
-    private static abstract class TwihoProcessor<T extends ApiLimitHeader> extends Processor<T> {
-        TwihoProcessor() {
+    private static abstract class TwitterProcessor<T extends ApiLimitHeader> extends Processor<T> {
+        TwitterProcessor() {
             initialize();
         }
 
@@ -95,7 +95,7 @@ public class TwitterServiceProvider extends ServiceProvider {
         }
 
         protected DebugProcessor<Users<List<User>>> debugProcessor(
-                TwihoProcessor<Users<List<User>>> t) {
+                TwitterProcessor<Users<List<User>>> t) {
             DebugProcessor<Users<List<User>>> dp = new DebugProcessor<Users<List<User>>>() {
                 @Override
                 public Users<List<User>> returnEmptyResponse() {
@@ -116,7 +116,7 @@ public class TwitterServiceProvider extends ServiceProvider {
      * @return ユーザ情報のリスト
      */
     public static Processor<Users<List<User>>> instanceOfStatusesFriends() {
-        return new TwihoProcessor<Users<List<User>>>() {
+        return new TwitterProcessor<Users<List<User>>>() {
             /*
              * リストで取得するものは必ず次回カーソルが取得できるようにパラメータ指定を強制
              */
@@ -228,7 +228,7 @@ public class TwitterServiceProvider extends ServiceProvider {
      * @return ユーザ情報のリスト
      */
     public static Processor<Users<List<User>>> instanceOfStatusesFollowers() {
-        return new TwihoProcessor<Users<List<User>>>() {
+        return new TwitterProcessor<Users<List<User>>>() {
             @Override
             protected void initialize() {
                 setCursor("-1");
@@ -272,7 +272,7 @@ public class TwitterServiceProvider extends ServiceProvider {
      * @return ユーザ情報のリスト
      */
     public static Processor<Users<List<User>>> instanceOfUsersLookup() {
-        return new TwihoProcessor<Users<List<User>>>() {
+        return new TwitterProcessor<Users<List<User>>>() {
             @Override
             public String getRequestName() {
                 return "UsersLookup";
@@ -361,14 +361,14 @@ public class TwitterServiceProvider extends ServiceProvider {
      */
     public abstract static class DebugProcessor<T extends ApiLimitHeader> extends Processor<T> {
         private String jsonString;
-        private TwihoProcessor<T> processor;
+        private TwitterProcessor<T> processor;
 
         public String getJsonString() {
             return jsonString;
         }
 
-        public void setProcessor(TwihoProcessor<T> twihoProcessor) {
-            this.processor = twihoProcessor;
+        public void setProcessor(TwitterProcessor<T> twitterProcessor) {
+            this.processor = twitterProcessor;
         }
 
         @Override

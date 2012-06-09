@@ -60,11 +60,11 @@ public class ApplicationUtil {
     }
 
     public static List<TwitterUser> convertFromJsonModelList(List<User> fromUserList) {
-        List<TwitterUser> toTwihoUserList = new ArrayList<TwitterUser>();
+        List<TwitterUser> toTwitterUserList = new ArrayList<TwitterUser>();
         for (User user : fromUserList) {
-            toTwihoUserList.add(convertFromJsonModel(user));
+            toTwitterUserList.add(convertFromJsonModel(user));
         }
-        return toTwihoUserList;
+        return toTwitterUserList;
     }
 
     public static TwitterUser convertFromJsonModel(User fromUser) {
