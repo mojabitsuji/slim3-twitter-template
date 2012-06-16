@@ -1,0 +1,260 @@
+status：required
+　The text of your status update, typically up to 140 characters. URL encode as necessary. t.co link wrapping may effect character counts.
+　There are some special commands in this field to be aware of. For instance, preceding a message with "D " or "M " and following it with a screen name can create a direct message to that user if the relationship allows for it.
+media[]：required
+　Up to max_media_per_upload files may be specified in the request, each named media[]. Supported image formats are PNG, JPG and GIF. Animated GIFs are not supported.
+　Note: Request the GET help/configuration endpoint to get the current max_media_per_upload and photo_size_limit values.
+possibly_sensitive：optional
+　Set to true for content which may not be suitable for every audience.
+in_reply_to_status_id：optional
+　The ID of an existing status that the update is in reply to.
+　Note:: This parameter will be ignored unless the author of the tweet this parameter references is mentioned within the status text. Therefore, you must include @username, where username is the author of the referenced tweet, within the update.
+user_id：optional
+　The ID of the user for whom to return results for. Helpful for disambiguating when a valid user ID is also a valid screen name.
+　Example Values: 12345
+　Note:: Specifies the ID of the user to befriend. Helpful for disambiguating when a valid user ID is also a valid screen name.
+screen_name：optional
+　The screen name of the user for whom to return results for. Helpful for disambiguating when a valid screen name is also a user ID.
+　Example Values: noradio
+id：optional
+　The ID or screen name of the user for whom to return results for. Note this isn't a query string parameter but a change to the end of the URL.
+　Example Values: 12345, noradio
+count：optional
+　Specifies the number of records to retrieve. Must be less than or equal to 200. Defaults to 20.
+　Example Values: 5
+since_id：optional
+　Returns results with an ID greater than (that is, more recent than) the specified ID. There are limits to the number of Tweets which can be accessed through the API. If the limit of Tweets has occured since the since_id, the since_id will be forced to the oldest ID available.
+　Example Values: 12345
+max_id：optional
+　Returns results with an ID less than (that is, older than) or equal to the specified ID.
+　Example Values: 54321
+page：optional
+　This parameter will soon cease to be functional See Working with Timelines.
+　Specifies the page of results to retrieve.
+　Example Values: 3
+trim_user：optional
+　When set to either true, t or 1, each tweet returned in a timeline will include a user object including only the status authors numerical ID. Omit this parameter to receive the complete user object.
+　Example Values: true
+include_rts：optional
+　When set to either true, t or 1,the timeline will contain native retweets (if they exist) in addition to the standard stream of tweets. The output format of retweeted tweets is identical to the representation you see in home_timeline. Note: If you're using the trim_user parameter in conjunction with include_rts, the retweets will still contain a full user object.
+　Example Values: true
+include_entities：optional
+　When set to either true, t or 1, each tweet will include a node called "entities,". This node offers a variety of metadata about the tweet in a discreet structure, including: user_mentions, urls, and hashtags. While entities are opt-in on timelines at present, they will be made a default component of output in the future. See Tweet Entities for more detail on entities.
+　Example Values: true
+include_my_retweet：optional
+　When set to either true, t or 1, any statuses returned that have been retweeted by the authenticating user will include an additional current_user_retweet node, containing the ID of the source status for the retweet. For all Phoenix API requests, this parameter is always set to true and cannot be overridden. For all other API requests, the default is to not include the current_user_retweet node unless requested.
+　Example Values: true
+exclude_replies：optional
+　This parameter will prevent replies from appearing in the returned timeline. Using exclude_replies with the count parameter will mean you will receive up-to count tweets ― this is because the count parameter retrieves that many tweets before filtering out retweets and replies.
+　Example Values: true
+contributor_details：optional
+　This parameter enhances the contributors element of the status response to include the screen_name of the contributor. By default only the user_id of the contributor is included.
+　Example Values: true
+stringify_ids：optional
+　Many programming environments will not consume our Tweet ids due to their size. Provide this option to have ids returned as strings instead. More about Snowflake.
+　Example Values: true
+lat：optional
+　The latitude of the location this tweet refers to. This parameter will be ignored unless it is inside the range -90.0 to +90.0 (North is positive) inclusive. It will also be ignored if there isn't a corresponding long parameter.
+　Example Values: 37.7821120598956
+long：optional
+　The longitude of the location this tweet refers to. The valid ranges for longitude is -180.0 to +180.0 (East is positive) inclusive. This parameter will be ignored if outside that range, if it is not a number, if geo_enabled is disabled, or if there not a corresponding lat parameter.
+　Example Values: -122.400612831116
+place_id：optional
+　A place in the world. These IDs can be retrieved from GET geo/reverse_geocode.
+　Example Values: df51dec6f4ee2b2c
+display_coordinates：optional
+　Whether or not to put a pin on the exact coordinates a tweet has been sent from.
+　Example Values: true
+url：required
+　The URL of the Tweet/status to be embedded.
+　Example Values:
+　To embed the Tweet at https://twitter.com/#!/twitter/status/99530515043983360, use:https%3A%2F%2Ftwitter.com%2F%23!%2Ftwitter%2Fstatus%2F99530515043983360
+　To embed the Tweet at https://twitter.com/twitter/status/99530515043983360, use:https%3A%2F%2Ftwitter.com%2Ftwitter%2Fstatus%2F99530515043983360
+maxwidth：
+　The maximum width in pixels that the embed should be rendered at. This value is constrained to be between 250 and 550 pixels.
+　Note that Twitter does not support the oEmbed maxheight parameter. Tweets are fundamentally text, and are therefore of unpredictable height that cannot be scaled like an image or video. Relatedly, the oEmbed response will not provide a value for height. Implementations that need consistent heights for Tweets should refer to the hide_thread and hide_media parameters below.
+　Example Values: 325
+hide_media：
+　Specifies whether the embedded Tweet should automatically expand images which were uploaded via POST statuses/update_with_media. When set to either true, t or 1 images will not be expanded. Defaults to false.
+　Example Values: true
+hide_thread：
+　Specifies whether the embedded Tweet should automatically show the original message in the case that the embedded Tweet is a reply. When set to either true, t or 1 the original Tweet will not be shown. Defaults to false.
+　Example Values: true
+omit_script：
+　Specifies whether the embedded Tweet HTML should include a <script> element pointing to widgets.js. In cases where a page already includes widgets.js, setting this value to true will prevent a redundant script element from being included. When set to either true, t or 1 the <script> element will not be included in the embed HTML, meaning that pages must include a reference to widgets.js manually. Defaults to false.
+　Example Values: true
+align：
+　Specifies whether the embedded Tweet should be left aligned, right aligned, or centered in the page. Valid values are left, right, center, and none. Defaults to none, meaning no alignment styles are specified for the Tweet.
+　Example Values: center
+related：
+　A value for the TWT related parameter, as described in Web Intents. This value will be forwarded to all Web Intents calls.
+　Example Values:twitterapi,twittermedia,twitter
+lang：
+　Language code for the rendered embed. This will affect the text and localization of the rendered HTML.
+　Example Values: fr
+q：required
+　Search query. Should be URL encoded. Queries will be limited by complexity.
+　Example Values: @noradio
+callback：optional
+　Only available for JSON format. If supplied, the response will use the JSONP format with a callback of the given name.
+geocode：optional
+　Returns tweets by users located within a given radius of the given latitude/longitude. The location is preferentially taking from the Geotagging API, but will fall back to their Twitter profile. The parameter value is specified by "latitude,longitude,radius", where radius units must be specified as either "mi" (miles) or "km" (kilometers). Note that you cannot use the near operator via the API to geocode arbitrary locations; however you can use this geocode parameter to search near geocodes directly.
+　Example Values: 37.781157,-122.398720,1mi
+locale：optional
+　Specify the language of the query you are sending (only ja is currently effective). This is intended for language-specific clients and the default should work in the majority of cases.
+　Example Values: ja
+result_type：optional
+　Optional. Specifies what type of search results you would prefer to receive. The current default is "mixed." Valid values include:
+　mixed: Include both popular and real time results in the response.
+　recent: return only the most recent results in the response
+　popular: return only the most popular results in the response.
+　Example Values: mixed, recent, popular
+rpp：optional
+　The number of tweets to return per page, up to a max of 100.
+　Example Values: 100
+show_user：optional
+　When true, prepends ":" to the beginning of the tweet. This is useful for readers that do not display Atom's author field. The default is false.
+until：optional
+　Optional. Returns tweets generated before the given date. Date should be formatted as YYYY-MM-DD.
+　Example Values: 2010-03-28
+
+
+
+
+
+・StatusesHomeTimeline
+http://api.twitter.com/1/statuses/home_timeline.format
+ExampleRequest：GET	https://api.twitter.com/1/statuses/home_timeline.json?include_entities=true
+RateLimited：Yes
+ResponseObject：Tweets
+Parameters：count,since_id,max_id,page,trim_user,include_rts,include_entities,exclude_replies,contributor_details
+
+・StatusesMentions
+http://api.twitter.com/1/statuses/mentions.format
+ExampleRequest：GET	https://api.twitter.com/1/statuses/mentions.json?include_entities=true
+RateLimited：Yes
+ResponseObject：Tweets
+Parameters：count,since_id,max_id,page,trim_user,include_rts,include_entities,contributor_details
+
+・StatusesRetweetedByMe
+http://api.twitter.com/1/statuses/retweeted_by_me.format
+ExampleRequest：GET	https://api.twitter.com/1/statuses/retweeted_by_me.json?include_entities=true&count=3
+RateLimited：Yes
+ResponseObject：Tweets
+Parameters：count,since_id,max_id,page,trim_user,include_entities
+
+・StatusesRetweetedToMe
+http://api.twitter.com/1/statuses/retweeted_to_me.format
+ExampleRequest：GET	https://api.twitter.com/1/statuses/retweeted_to_me.json?include_entities=true&count=1
+RateLimited：Yes
+ResponseObject：Tweets
+Parameters：count,since_id,max_id,page,trim_user,include_entities
+
+・StatusesRetweetsOfMe
+http://api.twitter.com/1/statuses/retweets_of_me.format
+ExampleRequest：GET	https://api.twitter.com/1/statuses/retweets_of_me.json?include_entities=true
+RateLimited：Yes
+ResponseObject：Tweets
+Parameters：count,since_id,max_id,page,trim_user,include_entities
+
+・StatusesUserTimeline
+http://api.twitter.com/1/statuses/user_timeline.format
+ExampleRequest：GET	https://api.twitter.com/1/statuses/user_timeline.json?include_entities=true&include_rts=true&screen_name=twitterapi&count=2
+RateLimited：Yes
+ResponseObject：Tweets
+Parameters：user_id,screen_name,count,since_id,max_id,page,trim_user,include_rts,include_entities,exclude_replies,contributor_details
+
+・StatusesRetweetedToUser
+http://api.twitter.com/1/statuses/retweeted_to_user.format
+ExampleRequest：GET	https://api.twitter.com/1/statuses/retweeted_to_user.json?screen_name=twitterapi&count=3
+RateLimited：Yes
+ResponseObject：Tweets
+Parameters：screen_name,id,count,since_id,max_id,page,trim_user,include_entities
+
+・StatusesRetweetedByUser
+http://api.twitter.com/1/statuses/retweeted_by_user.format
+ExampleRequest：GET	https://api.twitter.com/1/statuses/retweeted_by_user.json?screen_name=episod&count=1&include_entities=true
+RateLimited：No
+ResponseObject：Tweets
+Parameters：screen_name,id,count,since_id,max_id,page,trim_user,include_entities
+
+・StatusesIdRetweetedBy
+http://api.twitter.com/version/statuses/:id/retweeted_by.format
+ExampleRequest：GET	https://api.twitter.com/1/statuses/21947795900469248/retweeted_by.json
+RateLimited：Yes
+ResponseObject：Users
+Parameters：id,count,page
+
+・StatusesIdRetweetedByIds
+http://api.twitter.com/1/statuses/:id/retweeted_by/ids.format
+ExampleRequest：GET	https://api.twitter.com/1/statuses/21947795900469248/retweeted_by/ids.json
+RateLimited：Yes
+ResponseObject：-
+Parameters：id,count,page,stringify_ids
+
+・StatusesRetweetsId
+http://api.twitter.com/1/statuses/retweets/:id.format
+ExampleRequest：GET	https://api.twitter.com/1/statuses/retweets/21947795900469248.json
+RateLimited：Yes
+ResponseObject：Tweets
+Parameters：id,count,trim_user,include_entities
+
+・StatusesShowId
+http://api.twitter.com/1/statuses/show/:id.format
+ExampleRequest：GET	https://api.twitter.com/1/statuses/show.json?id=112652479837110273&include_entities=true
+RateLimited：Yes
+ResponseObject：Tweets
+Parameters：id,trim_user,include_entities,include_my_retweet
+
+・StatusesDestroyId
+http://api.twitter.com/1/statuses/destroy/:id.format
+ExampleRequest：POST　http://api.twitter.com/1/statuses/destroy/18976237157.json
+　　　　　　　　　　POST Data	None
+RateLimited：No
+ResponseObject：Tweets
+Parameters：id,trim_user,include_entities
+
+・StatusesRetweetId
+http://api.twitter.com/1/statuses/retweet/:id.format
+ExampleRequest：POST http://api.twitter.com/1/statuses/retweet/3962807808.json
+　　　　　　　　　　POST Data	None
+RateLimited：Yes
+ResponseObject：Tweets
+Parameters：id,trim_user,include_entities
+
+・StatusesUpdate
+http://api.twitter.com/1/statuses/update.format
+ExampleRequest：POST　https://api.twitter.com/1/statuses/update.json
+　　　　　　　　　　POST Data	status=Maybe%20he%27ll%20finally%20find%20his%20keys.%20%23peterfalk&trim_user=true&include_entities=true
+RateLimited：No
+ResponseObject：Tweets
+Parameters：status,in_reply_to_status_id,lat,long,place_id,display_coordinates,trim_user,include_entities
+
+・StatusesUpdateWithMedia
+https://upload.twitter.com/1/statuses/update_with_media.format
+ExampleRequest：POST　https://upload.twitter.com/1/statuses/update_with_media.json
+　　　　　　　　　　POST Data	None
+RateLimited：Yes
+ResponseObject：Tweets
+Parameters：status,media[],possibly_sensitive,in_reply_to_status_id,lat,long,place_id,display_coordinates
+
+・StatusesOembed
+https://api.twitter.com/1/statuses/oembed.format
+ExampleRequest：GET	https://api.twitter.com/1/statuses/oembed.json?id=99530515043983360
+RateLimited：Yes
+ResponseObject：-
+Parameters：id,url,maxwidth,hide_media,hide_thread,omit_script,align,related,lang
+
+・Search
+http://search.twitter.com/search.format
+ExampleRequest：GET	http://search.twitter.com/search.json?q=blue%20angels&rpp=5&include_entities=true&result_type=mixed
+RateLimited：Yes
+ResponseObject：Tweets
+Parameters：q,callback,geocode,lang,locale,page,result_type,rpp,show_user,until,since_id,max_id,include_entities
+
+
+・
+・
+・
+・
+・

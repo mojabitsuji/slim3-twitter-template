@@ -1,0 +1,172 @@
+[
+  {
+    "coordinates": null,
+    "favorited": false,
+    "created_at": "Thu Jan 06 22:34:35 +0000 2011",
+    "truncated": true,
+    "retweeted_status": {
+      "coordinates": null,
+      "favorited": false,
+      "created_at": "Thu Jan 06 09:07:08 +0000 2011",
+      "truncated": false,
+      "id_str": "22942231321120768",
+      "in_reply_to_user_id_str": null,
+      "entities": {
+        "places": [
+ 
+        ],
+        "urls": [
+          {
+            "expanded_url": null,
+            "url": "http://bit.ly/gOGobP",
+            "indices": [
+              108,
+              128
+            ]
+          }
+        ],
+        "hashtags": [
+          {
+            "text": "OpenData",
+            "indices": [
+              49,
+              58
+            ]
+          }
+        ],
+        "user_mentions": [
+ 
+        ]
+      },
+      "contributors": null,
+      "annotations": null,
+      "text": "We've adopted the Open Government Licence for OS #OpenData. Find out why and what the change means &gt;&gt; http://bit.ly/gOGobP",
+      "id": 22942231321120768,
+      "retweet_count": 50,
+      "in_reply_to_status_id_str": null,
+      "geo": null,
+      "retweeted": false,
+      "in_reply_to_user_id": null,
+      "user": {
+        "profile_background_tile": false,
+        "profile_sidebar_fill_color": "dee8f7",
+        "name": "Ordnance Survey",
+        "profile_sidebar_border_color": "f5f0f0",
+        "location": "Southampton, UK",
+        "profile_image_url": "http://a0.twimg.com/profile_images/1168399251/logo_normal.jpg",
+        "created_at": "Tue Mar 03 12:05:01 +0000 2009",
+        "follow_request_sent": false,
+        "id_str": "22614266",
+        "profile_link_color": "2b68b3",
+        "is_translator": false,
+        "favourites_count": 0,
+        "contributors_enabled": false,
+        "url": "http://blog.ordnancesurvey.co.uk/",
+        "utc_offset": 0,
+        "id": 22614266,
+        "listed_count": 257,
+        "profile_use_background_image": true,
+        "followers_count": 3794,
+        "profile_text_color": "ed7626",
+        "protected": false,
+        "lang": "en",
+        "time_zone": "London",
+        "profile_background_color": "2e3192",
+        "notifications": false,
+        "geo_enabled": false,
+        "verified": false,
+        "description": "Britain's National Mapping Agency. Also on @OSleisure for outdoor essentials.",
+        "friends_count": 114,
+        "statuses_count": 1660,
+        "profile_background_image_url": "http://a0.twimg.com/profile_background_images/69917194/twitterbg1.png",
+        "screen_name": "OrdnanceSurvey",
+        "following": false,
+        "show_all_inline_media": false
+      },
+      "source": "<a href=\"http://www.tweetdeck.com\" rel=\"nofollow\">TweetDeck</a>",
+      "in_reply_to_screen_name": null,
+      "place": null,
+      "in_reply_to_status_id": null
+    },
+    "id_str": "23145433144496128",
+    "in_reply_to_user_id_str": null,
+    "entities": {
+      "places": [
+ 
+      ],
+      "urls": [
+ 
+      ],
+      "hashtags": [
+        {
+          "text": "OpenData",
+          "indices": [
+            69,
+            78
+          ]
+        }
+      ],
+      "user_mentions": [
+        {
+          "name": "Ordnance Survey",
+          "id_str": "22614266",
+          "id": 22614266,
+          "indices": [
+            3,
+            18
+          ],
+          "screen_name": "OrdnanceSurvey"
+        }
+      ]
+    },
+    "contributors": null,
+    "annotations": null,
+    "text": "RT @OrdnanceSurvey: We've adopted the Open Government Licence for OS #OpenData. Find out why and what the change means &gt;&gt; http://b ...",
+    "id": 23145433144496128,
+    "retweet_count": 50,
+    "in_reply_to_status_id_str": null,
+    "geo": null,
+    "retweeted": false,
+    "in_reply_to_user_id": null,
+    "user": {
+      "profile_background_tile": false,
+      "profile_sidebar_fill_color": "DDEEF6",
+      "name": "Top Tech Tweets",
+      "profile_sidebar_border_color": "C0DEED",
+      "location": "",
+      "profile_image_url": "http://a3.twimg.com/profile_images/1202096248/twitterAvatarTech2_normal.png",
+      "created_at": "Tue Apr 20 11:28:04 +0000 2010",
+      "follow_request_sent": false,
+      "id_str": "135117300",
+      "profile_link_color": "0084B4",
+      "is_translator": false,
+      "favourites_count": 2044,
+      "contributors_enabled": false,
+      "url": "http://favstar.fm",
+      "utc_offset": -36000,
+      "id": 135117300,
+      "listed_count": 24,
+      "profile_use_background_image": true,
+      "followers_count": 468,
+      "profile_text_color": "333333",
+      "protected": false,
+      "lang": "en",
+      "time_zone": "Hawaii",
+      "profile_background_color": "C0DEED",
+      "notifications": false,
+      "geo_enabled": false,
+      "verified": false,
+      "description": "I retweet top tech tweets. I'm an automated account and unmoderated. Some non-tech tweets may occasionally be retweeted due to the selection criteria.",
+      "friends_count": 1,
+      "statuses_count": 2023,
+      "profile_background_image_url": "http://a3.twimg.com/a/1292975674/images/themes/theme1/bg.png",
+      "screen_name": "favstar_tech",
+      "following": true,
+      "show_all_inline_media": false
+    },
+    "source": "<a href=\"http://favstar.fm\" rel=\"nofollow\">Favstar.FM</a>",
+    "in_reply_to_screen_name": null,
+    "place": null,
+    "in_reply_to_status_id": null
+  }
+]

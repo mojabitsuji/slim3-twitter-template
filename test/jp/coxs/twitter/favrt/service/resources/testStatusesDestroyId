@@ -1,0 +1,102 @@
+{
+  "coordinates": null,
+  "truncated": false,
+  "created_at": "Tue Jul 20 07:34:26 +0000 2010",
+  "favorited": false,
+  "entities": {
+    "urls": [
+ 
+    ],
+    "hashtags": [
+ 
+    ],
+    "user_mentions": [
+      {
+        "name": "Twitter",
+        "id": 783214,
+        "indices": [
+          42,
+          50
+        ],
+        "screen_name": "twitter"
+      }
+    ]
+  },
+  "text": "Watching the conversations of the awesome @twitter team as they work through today's issues reminds me why I love this place and the people",
+  "contributors": null,
+  "annotations": null,
+  "id": 18976237157,
+  "geo": null,
+  "in_reply_to_user_id": null,
+  "user": {
+    "profile_sidebar_border_color": "C0DEED",
+    "name": "Matt Harris",
+    "profile_sidebar_fill_color": "DDEEF6",
+    "profile_background_tile": false,
+    "profile_image_url": "http://a2.twimg.com/profile_images/554181350/matt_normal.jpg",
+    "created_at": "Sat Feb 17 20:49:54 +0000 2007",
+    "location": "San Francisco",
+    "profile_link_color": "0084B4",
+    "follow_request_sent": false,
+    "contributors_enabled": false,
+    "favourites_count": 101,
+    "url": "http://themattharris.com",
+    "utc_offset": -28800,
+    "id": 777925,
+    "profile_use_background_image": true,
+    "listed_count": 134,
+    "followers_count": 1244,
+    "protected": false,
+    "lang": "en",
+    "profile_text_color": "333333",
+    "time_zone": "Tijuana",
+    "verified": false,
+    "geo_enabled": true,
+    "profile_background_color": "C0DEED",
+    "notifications": false,
+    "description": "Developer Advocate at Twitter. Also a hacker and British expat who is married to @cindyli and lives in San Francisco.",
+    "statuses_count": 2979,
+    "profile_background_image_url": "http://s.twimg.com/a/1279322210/images/themes/theme1/bg.png",
+    "friends_count": 306,
+    "screen_name": "themattharris",
+    "following": true
+  },
+  "source": "web",
+  "in_reply_to_screen_name": null,
+  "place": {
+    "name": "San Francisco",
+    "country_code": "US",
+    "country": "The United States of America",
+    "attributes": {
+ 
+    },
+    "url": "http://api.twitter.com/1/geo/id/5a110d312052166f.json",
+    "id": "5a110d312052166f",
+    "bounding_box": {
+      "coordinates": [
+        [
+          [
+            -122.51368188,
+            37.70813196
+          ],
+          [
+            -122.35845384,
+            37.70813196
+          ],
+          [
+            -122.35845384,
+            37.83245301
+          ],
+          [
+            -122.51368188,
+            37.83245301
+          ]
+        ]
+      ],
+      "type": "Polygon"
+    },
+    "full_name": "San Francisco, CA",
+    "place_type": "city"
+  },
+  "in_reply_to_status_id": null
+}
