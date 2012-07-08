@@ -6,31 +6,15 @@ package jp.coxs.twitter.favrt.model.json;
  * @author Shunichi Todoroki
  */
 public class Place {
-    private String countryCode;
-    private BoundingBox boundingBox;
     private String name;
-    private String id;
+    private String countryCode;
     private String country;
-    private String placeType;
-    private String fullName;
-    private String url;
     private Attributes attributes;
-
-    public String getCountryCode() {
-        return countryCode;
-    }
-
-    public void setCountryCode(String countryCode) {
-        this.countryCode = countryCode;
-    }
-
-    public BoundingBox getBoundingBox() {
-        return boundingBox;
-    }
-
-    public void setBoundingBox(BoundingBox boundingBox) {
-        this.boundingBox = boundingBox;
-    }
+    private String url;
+    private String id;
+    private BoundingBox boundingBox;
+    private String fullName;
+    private String placeType;
 
     public String getName() {
         return name;
@@ -40,12 +24,12 @@ public class Place {
         this.name = name;
     }
 
-    public String getId() {
-        return id;
+    public String getCountryCode() {
+        return countryCode;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setCountryCode(String countryCode) {
+        this.countryCode = countryCode;
     }
 
     public String getCountry() {
@@ -56,20 +40,12 @@ public class Place {
         this.country = country;
     }
 
-    public String getPlaceType() {
-        return placeType;
+    public Attributes getAttributes() {
+        return attributes;
     }
 
-    public void setPlaceType(String placeType) {
-        this.placeType = placeType;
-    }
-
-    public String getFullName() {
-        return fullName;
-    }
-
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
+    public void setAttributes(Attributes attributes) {
+        this.attributes = attributes;
     }
 
     public String getUrl() {
@@ -80,34 +56,58 @@ public class Place {
         this.url = url;
     }
 
-    public Attributes getAttributes() {
-        return attributes;
+    public String getId() {
+        return id;
     }
 
-    public void setAttributes(Attributes attributes) {
-        this.attributes = attributes;
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public BoundingBox getBoundingBox() {
+        return boundingBox;
+    }
+
+    public void setBoundingBox(BoundingBox boundingBox) {
+        this.boundingBox = boundingBox;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    public String getPlaceType() {
+        return placeType;
+    }
+
+    public void setPlaceType(String placeType) {
+        this.placeType = placeType;
     }
 
     @Override
     public String toString() {
-        return "Place [attributes="
-            + attributes
-            + ", boundingBox="
-            + boundingBox
-            + ", country="
-            + country
+        return "Place [name="
+            + name
             + ", countryCode="
             + countryCode
-            + ", fullName="
-            + fullName
-            + ", id="
-            + id
-            + ", name="
-            + name
-            + ", placeType="
-            + placeType
+            + ", country="
+            + country
+            + ", attributes="
+            + attributes
             + ", url="
             + url
+            + ", id="
+            + id
+            + ", boundingBox="
+            + boundingBox
+            + ", fullName="
+            + fullName
+            + ", placeType="
+            + placeType
             + "]";
     }
 }

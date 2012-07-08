@@ -19,7 +19,7 @@ public class User {
     private boolean following;
     private int friendsCount;
     private boolean geoEnabled;
-    private String id;
+    private int id;
     private String idStr;
     private boolean isTranslator;
     private String lang;
@@ -137,11 +137,11 @@ public class User {
         this.geoEnabled = geoEnabled;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

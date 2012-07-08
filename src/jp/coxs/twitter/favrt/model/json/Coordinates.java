@@ -7,17 +7,10 @@ import java.util.Arrays;
  * 
  * @author Shunichi Todoroki
  */
+@Done
 public class Coordinates {
-    private String type;
     private double[] coordinates;
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
+    private String type;
 
     public double[] getCoordinates() {
         return coordinates;
@@ -25,6 +18,14 @@ public class Coordinates {
 
     public void setCoordinates(double[] coordinates) {
         this.coordinates = coordinates;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     @Override
